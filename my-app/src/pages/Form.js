@@ -1,6 +1,6 @@
 import React from 'react';
-import logoAltaDua from './assets/img/logo-ALTA-v2@2x.png';
-import './assets/css/challenge1.css';
+import logoAltaDua from '../assets/img/logo-ALTA-v2@2x.png';
+// import '../assets/css/challenge1.css';
 
 function Form() {
     return (
@@ -71,11 +71,7 @@ function Form() {
                                 <div class="form-group">
                                     <label for="form-control">Message</label>
                                     <br />
-                                    <textarea
-                                        class="form-controlarea"
-                                        id="exampleFormControlTextarea1"
-                                        rows="10"
-                                    />
+                                    <textarea class="form-controlarea" id="exampleFormControlTextarea1" rows="10" />
                                 </div>
                                 <br />
                                 <div class="button-submit">
