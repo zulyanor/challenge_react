@@ -1,0 +1,153 @@
+@import url('https://fonts.googleapis.com/css?family=Muli:400,700&display=swap');
+
+
+.form-isi {
+    padding-right: 150px;
+    padding-left: 100px;
+}
+
+h3 {
+    padding-top: 20px;
+    padding-bottom: 10px;
+    font-size: 23px;
+    color: #19345E;
+    font-family: "Muli";
+}
+.form-group {
+    font-size: 20px;
+    color: #19345E;
+    font-family: "Muli";
+}
+
+span {
+    color: #FF0000;
+}
+
+.col-md-5 {
+    background-image: url(../img/charles-rRWiVQzLm7k-unsplash.jpg);
+    background-size: cover;
+    color: blue;
+    background-repeat: no-repeat;
+    padding-left: 0;
+    width: 512px;
+    height: 792px;
+}
+
+.alterra {
+    text-align: center;
+    width: 100%;
+    display: block;
+    position: relative;
+    z-index: 99;
+}
+
+
+.box-fit {
+    background-color: rgba(25, 52, 94, 0.65);
+    opacity: 65%;
+    position: absolute;
+    width: 535px;
+    height: 792px;
+    background-size: cover;
+}
+
+.foto {
+    width: 592px;
+    height: 792px;
+}
+
+.minimal {
+    -webkit-appearance: none;
+    background-image: url(../img/down-arrow.png);
+    background-repeat: no-repeat;
+    background-size: 22px;
+    background-position: 95% center;
+    background-color: white;
+}
+
+.form-control {
+    border-radius: 8px;
+    border: 2px solid #19345E;
+    width: 460px;
+    height: 60px;
+}
+
+.form-controlarea {
+    width: 460px;
+    height: 120px;
+    border: 1px solid #707070;
+    border-radius: 8px;
+}
+
+.form-control2 {
+    border-radius: 8px;
+    border: 1px solid #707070;
+    width: 460px;
+    height: 60px;
+}
+
+::placeholder {
+    color: #D5D5D5;
+}
+
+input {
+    color: #19345E;
+    padding: 10px;
+}
+
+.btn-submit {
+    background-color: #F47522;
+    color: white;
+    border: 2px solid #F47522;
+    width: 149.77px;
+    border-radius: 20px;
+}
+
+.number-phone {
+    -webkit-appearance: none;
+}
+
+.select{
+    color: #707070;
+}
+
+.form-control2:focus {
+    border-radius: 8px;
+    border: 2px solid #19345E;
+}
+
+@media (max-width: 2000px) {
+    .form-isi{padding: 0}
+    .form-control2 {width: 100%}
+    .box-fit {width: 100%}
+    .alterra {width: 100%}
+    .form-controlarea {width: 100%}
+    .gambarpanjang {padding: 0}
+    .col-md-5 {height: auto;}
+    .box-fit {height: 100%;}
+    .button-submit {text-align: center}
+}
+
+@media (max-width: 992px) {
+    .form-isi{padding: 0}
+    .form-control2 {width: 100%}
+    .box-fit {width: 100%}
+    .alterra {width: 100%}
+    .form-controlarea {width: 100%}
+    .gambarpanjang {padding: 0}
+    .col-md-5 {height: auto;}
+    .box-fit {height: 131px;}
+    .button-submit {text-align: center}
+}
+
+@media (max-width: 767px) {
+    .form-isi{padding: 0}
+    .form-control2 {width: 100%}
+    .box-fit {width: 100%; padding-right: 50px}
+    .alterra {width: 100%}
+    .form-controlarea {width: 100%}
+    .gambarpanjang {padding: 0;}
+    .col-md-5 {height: auto;}
+    .box-fit {height: 131px;}
+    .button-submit {text-align: center}
+}
