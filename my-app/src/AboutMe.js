@@ -1,13 +1,13 @@
 import React from 'react';
-import logoAlta from './assets/img/logo-ALTA@2x.png'
-import fotoCewe from './assets/img/matthew-hamilton-tNCH0sKSZbA-unsplash.jpg'
-import fotoDot from './assets/img/img-dot@2x.png'
-import logoAltaDua from './assets/img/logo-ALTA-v2@2x.png'
-import fotoFB from './assets/img/ic_fb@2x.png'
-import fotoTwitter from './assets/img/ic-twitter@2x.png'
-import fotoInsta from './assets/img/ic-instagram@2x.png'
-import fotoLinked from './assets/img/ic-linkedin@2x.png'
-import './assets/css/challenge1.css'
+import logoAlta from './assets/img/logo-ALTA@2x.png';
+import fotoCewe from './assets/img/matthew-hamilton-tNCH0sKSZbA-unsplash.jpg';
+import fotoDot from './assets/img/img-dot@2x.png';
+import logoAltaDua from './assets/img/logo-ALTA-v2@2x.png';
+import fotoFB from './assets/img/ic_fb@2x.png';
+import fotoTwitter from './assets/img/ic-twitter@2x.png';
+import fotoInsta from './assets/img/ic-instagram@2x.png';
+import fotoLinked from './assets/img/ic-linkedin@2x.png';
+import './assets/css/challenge1.css';
 
 function AboutMe() {
     return (
@@ -17,7 +17,7 @@ function AboutMe() {
                     <div className="row">
                         <div className="col-md-5">
                             <div className="header-logo-alterra">
-                                <img src={logoAlta} height="67px" width="134px" />   
+                                <img src={logoAlta} height="67px" width="134px" />
                             </div>
                         </div>
                         <div className="col-md-7 header-menu-right">
@@ -33,17 +33,24 @@ function AboutMe() {
             </header>
             <div className="container-fluid about-me">
                 <div className="row">
-                    <div className="about-me-text">
-                        ABOUT ME.
-                    </div>
+                    <div className="about-me-text">ABOUT ME.</div>
                 </div>
             </div>
             <div className="container main-content">
                 <div className="row">
-                    <div className="col-md-7"> 
+                    <div className="col-md-7">
                         <div className="main-content-paragraph">
-                            <p>Hello! I'm Anna Sullivan, a full-stack engineer based in Malang, IDN who enjoys building things that live on the internet. I develop exceptional websites and web apps that provide intuitive, pixel perfect user interfaces with efficient and modern backends.</p>
-                            <p>Shortly after graduating from Alterra Academy, I joined the engineering team at Alterra where I work on a wide variety of interesting and meaningful projects on a daily basis.</p>
+                            <p>
+                                Hello! I'm Anna Sullivan, a full-stack engineer based in Malang, IDN
+                                who enjoys building things that live on the internet. I develop
+                                exceptional websites and web apps that provide intuitive, pixel
+                                perfect user interfaces with efficient and modern backends.
+                            </p>
+                            <p>
+                                Shortly after graduating from Alterra Academy, I joined the
+                                engineering team at Alterra where I work on a wide variety of
+                                interesting and meaningful projects on a daily basis.
+                            </p>
                             <p>Here's few technologies I've been working with recently:</p>
                         </div>
                         <div className="main-content-table">
@@ -73,8 +80,18 @@ function AboutMe() {
                     </div>
                     <div className="col-md-5">
                         <div className="main-content-images">
-                            <img src={fotoCewe} width="249px" height="249px" className="main-content-image-person" />
-                            <img src={fotoDot} width="90px" height="76px" className="main-content-image-dot" />
+                            <img
+                                src={fotoCewe}
+                                width="249px"
+                                height="249px"
+                                className="main-content-image-person"
+                            />
+                            <img
+                                src={fotoDot}
+                                width="90px"
+                                height="76px"
+                                className="main-content-image-dot"
+                            />
                         </div>
                     </div>
                 </div>
@@ -91,10 +108,18 @@ function AboutMe() {
                             <div class="social-content">
                                 <h5>Social Media</h5>
                                 <ul class="social-media">
-                                    <li><img src={fotoFB} width="20px" height="20px" /></li>
-                                    <li><img src={fotoTwitter} width="20px" height="20px" /></li>
-                                    <li><img src={fotoInsta} width="20px" height="20px" /></li>
-                                    <li><img src={fotoLinked} width="20px" height="20px" /></li>
+                                    <li>
+                                        <img src={fotoFB} width="20px" height="20px" />
+                                    </li>
+                                    <li>
+                                        <img src={fotoTwitter} width="20px" height="20px" />
+                                    </li>
+                                    <li>
+                                        <img src={fotoInsta} width="20px" height="20px" />
+                                    </li>
+                                    <li>
+                                        <img src={fotoLinked} width="20px" height="20px" />
+                                    </li>
                                 </ul>
                             </div>
                         </div>
@@ -102,13 +127,12 @@ function AboutMe() {
                             <div class="copyright">
                                 <h5>Copyright &copy; Alterra</h5>
                             </div>
-
                         </div>
                     </div>
                 </div>
             </footer>
         </div>
-    )
-}   
+    );
+}
 
 export default AboutMe;
