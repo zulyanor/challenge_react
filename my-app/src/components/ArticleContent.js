@@ -1,63 +1,51 @@
 import React from 'react';
+import axios from 'axios';
+var url = 'https://newsapi.org/v2/top-headlines?' + 'country=id&' + 'apiKey=1d56107880dc48ea9fe059cd7ace11d5';
 
-function ArticleContent() {
-    return (
-        <div className="ArticleContent">
-            <div className="row justify-content-center">
-                <div className="col-md-4">
-                    <ul className="list-group">
-                        <li className="list-group-item list-group-item-action list-group-item-primary text-center">
-                            Top News Today
-                        </li>
-                        <li className="list-group-item d-flex justify-content-between align-items-center">
-                            Newcastle 0 - 1 Arsenal
-                            <span className="badge badge-primary badge-pill">#1</span>
-                        </li>
-                        <li className="list-group-item d-flex justify-content-between align-items-center">
-                            Newcastle 0 - 1 Arsenal
-                            <span className="badge badge-primary badge-pill">#2</span>
-                        </li>
-                        <li className="list-group-item d-flex justify-content-between align-items-center">
-                            Newcastle 0 - 1 Arsenal
-                            <span className="badge badge-primary badge-pill">#3</span>
-                        </li>
-                        <li className="list-group-item d-flex justify-content-between align-items-center">
-                            Newcastle 0 - 1 Arsenal
-                            <span className="badge badge-primary badge-pill">#4</span>
-                        </li>
-                        <li className="list-group-item d-flex justify-content-between align-items-center">
-                            Newcastle 0 - 1 Arsenal
-                            <span className="badge badge-primary badge-pill">#5</span>
-                        </li>
-                        <li className="list-group-item d-flex justify-content-between align-items-center">
-                            Newcastle 0 - 1 Arsenal
-                            <span className="badge badge-primary badge-pill">#6</span>
-                        </li>
-                    </ul>
-                </div>
-                <div className="col-md-7">
-                    <div className="card">
-                        <img
-                            src="https://bobcat.grahamdigital.com/7a743e189b3ca2c3549bbf46aa761986f861674e/fit-630x353-000.jpg"
-                            className="card-img-top"
-                            alt="breaking news"
-                        />
-                        <div className="card-body">
-                            <h5 className="card-title">
-                                Nikahi Rakyat Jelata, Putri Ayako dari Jepang Lepaskan Gelar Kerajaan
-                            </h5>
-                            <p className="card-text">
-                                Pernikahan Putri Ayako dan Kei Moriya dilangsungkan lewat upacara tradisional Jepang.
-                            </p>
-                            <a href="#" className="btn btn-primary">
-                                Baca selengkapnya
-                            </a>
-                        </div>
-                    </div>
-                </div>
+class ArticleContent extends React.Component {
+    constructor(props) {
+        super(props);
+        this.state = {
+            listNews: []
+        };
+    }
+    componentDidMount() {
+        const self = this;
+        axios
+            .get(url)
+            .then(function(response) {
+                self.setState({ listNews: response.data.articles });
+                // handle success
+                console.log(response.data.articles);
+            })
+            .catch(function(error) {
+                // handle error
+                console.log(error);
+            });
+    }
+    render() {
+        return (
+            <div className="ArticleContent">
+                <ul className="list-group">
+                    <li className="list-group-item list-group-item-action list-group-item-primary text-center">
+                        Top News Today
+                    </li>
+                    {this.state.listNews.map((item, index) => {
+                        if (index < 10) {
+                            return (
+                                <li className="list-group-item d-flex justify-content-between align-items-center">
+                                    {item.title.slice(0, 80) + '...'}
+                                    <span>
+                                        <a href={item.url}>Read more</a>
+                                    </span>
+                                </li>
+                            );
+                        }
+                    })}
+                </ul>
             </div>
-        </div>
-    );
+        );
+    }
 }
 
 export default ArticleContent;

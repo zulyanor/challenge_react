@@ -8,17 +8,17 @@ import fotoLinked from '../assets/img/ic-linkedin@2x.png';
 function Footer() {
     return (
         <footer>
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-6">
-                        <div class="footer-logo-alterra">
+            <div className="container">
+                <div className="row">
+                    <div className="col-md-6">
+                        <div className="footer-logo-alterra">
                             <img src={logoAltaDua} width="110px" height="57px" />
                         </div>
                     </div>
-                    <div class="col-md-3 social">
-                        <div class="social-content">
+                    <div className="col-md-3 social">
+                        <div className="social-content">
                             <h5>Social Media</h5>
-                            <ul class="social-media">
+                            <ul className="social-media">
                                 <li>
                                     <img src={fotoFB} width="20px" height="20px" />
                                 </li>
@@ -34,8 +34,8 @@ function Footer() {
                             </ul>
                         </div>
                     </div>
-                    <div class="col-md-3">
-                        <div class="copyright">
+                    <div className="col-md-3">
+                        <div className="copyright">
                             <h5>Copyright &copy; Alterra</h5>
                         </div>
                     </div>

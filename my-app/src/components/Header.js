@@ -16,7 +16,7 @@ function Header() {
                             <ul className="topMenu">
                                 <li>
                                     <input
-                                        class="form-control mr-sm-2"
+                                        className="form-control mr-sm-2"
                                         type="search"
                                         placeholder="Search"
                                         aria-label="Search"

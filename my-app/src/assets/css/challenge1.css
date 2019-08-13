@@ -692,7 +692,8 @@ footer .copyright h5 {
         padding-right: 30px;
     }
 }
-.ArticleContent {
+.ArticleContent,
+.ArticleContentTwo {
     margin-top: 50px;
     padding: 20px;
 }
