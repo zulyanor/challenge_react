@@ -33,7 +33,14 @@ function Header(props) {
                                     <Link to="/Signin">SIGN IN</Link>
                                 </li>
                                 <li id="contact">
-                                    <Link to="/Form">SIGN OUT</Link>
+                                    <Link
+                                        to="/Signin"
+                                        onClick={() => {
+                                            localStorage.removeItem('is_login');
+                                        }}
+                                    >
+                                        SIGN OUT
+                                    </Link>
                                 </li>
                                 <li id="article">
                                     <Link to="/Article">ARTICLE</Link>

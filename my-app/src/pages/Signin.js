@@ -16,7 +16,7 @@ class Signin extends React.Component {
         };
         const self = this;
         axios
-            .post('https://zulyano.free.beeceptor.com/auth', data)
+            .post('https://zulyano1.free.beeceptor.com/auth', data)
             .then(function(response) {
                 console.log(response.data);
                 // if (response.data.hasOwnProperty('api_key')) {
