@@ -34,7 +34,7 @@ class ArticleContentTwo extends React.Component {
                                     <img src={item.urlToImage} />
                                     <div className="card-body">
                                         <h5 className="card-title">{item.title}</h5>
-                                        <p className="card-text">{item.content.slice(0, 255)}</p>
+                                        <p className="card-text">{item.content.slice(0, 100)}</p>
                                         <a href={item.url} className="btn btn-primary">
                                             Read more
                                         </a>

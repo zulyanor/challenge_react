@@ -57,7 +57,7 @@ class Article extends React.Component {
     componentDidUpdate = prevProps => {
         // so the api will back to default state after deleting search
         // componentDidMount()
-        // const self = this;
+        const self = this;
         // axios
         //     .get(
         //         'https://newsapi.org/v2/everything?q=' + self.state.keyword + 'apiKey=79eb08ce1ed043efb01f7889808dcfa6'
@@ -76,13 +76,14 @@ class Article extends React.Component {
         // } = this.props;
         if (prevProps.value !== this.props.value) {
             axios
+
                 .get(
-                    `https://newsapi.org/v2/everything?category=${
-                        this.props.value
+                    `https://newsapi.org/v2/everything?sources=${
+                        self.props.value
                     }&apiKey=9feafcae305b4d9ca1624bb8e3d2ecb6`
                 )
                 .then(function(response) {
-                    this.setState({ data: response.data.articles });
+                    self.setState({ data: response.data.articles });
                     // handle success
                     console.log(response.data.articles);
                 })
@@ -100,23 +101,23 @@ class Article extends React.Component {
                 <Header handle={this.handleChange} />
                 <div className="row text-center categories">
                     <div className="col-md-3">
-                        <Link to="/Article/sports">
-                            <p>Sport</p>
+                        <Link to="/Article/abc-news">
+                            <p>ABC-News</p>
                         </Link>
                     </div>
                     <div className="col-md-3">
-                        <Link to="/Article/entertainment">
-                            <p>Politic</p>
+                        <Link to="/Article/bbc-news">
+                            <p>BBC News</p>
                         </Link>
                     </div>
                     <div className="col-md-3">
-                        <Link to="/Article/technology">
-                            <p>Tech</p>
+                        <Link to="/Article/ign">
+                            <p>IGN</p>
                         </Link>
                     </div>
                     <div className="col-md-3">
-                        <Link to="/Article/usiness">
-                            <p>Business</p>
+                        <Link to="/Article/reuters">
+                            <p>Reuters</p>
                         </Link>
                     </div>
                 </div>

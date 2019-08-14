@@ -31,6 +31,6 @@ const Profile = props => {
 };
 
 export default connect(
-    'username, password, isLogin',
+    'username, password, isLogin, email',
     actions
 )(Profile);
