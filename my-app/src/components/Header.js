@@ -27,7 +27,7 @@ function Header(props) {
                                 </li>
                                 <li id="home">
                                     {/* link_to navigate between pages as stated in index.js(main page) */}
-                                    <Link to="/">PROFILE</Link>
+                                    <Link to="/Profile">PROFILE</Link>
                                 </li>
                                 <li id="about">
                                     <Link to="/Signin">SIGN IN</Link>

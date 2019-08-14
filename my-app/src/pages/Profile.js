@@ -8,11 +8,12 @@ const Profile = props => {
     const full_name = localStorage.getItem('full_name');
     console.log('is_login', is_login);
 
-    if (is_login === null) {
+    if (!is_login) {
         return <Redirect to={{ pathname: '/Signin' }} />;
     } else {
         return (
             <section className="content">
+                <Header />
                 <h1 style={{ textAlign: 'center' }}>Profile</h1>
                 <p>
                     <label>Email:</label> {email}
