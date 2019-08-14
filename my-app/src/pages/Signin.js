@@ -19,13 +19,13 @@ class Signin extends React.Component {
             .post('https://zulyano.free.beeceptor.com/auth', data)
             .then(function(response) {
                 console.log(response.data);
-                if (response.data.hasOwnProperty('api_key')) {
-                    localStorage.setItem('api_key', response.data.api_key);
-                    localStorage.setItem('is_login', true);
-                    localStorage.setItem('full_name', response.data.full_name);
-                    localStorage.setItem('email', response.data.email);
-                    self.props.history.push('/Profile');
-                }
+                // if (response.data.hasOwnProperty('api_key')) {
+                localStorage.setItem('api_key', response.data.api_key);
+                localStorage.setItem('is_login', true);
+                localStorage.setItem('full_name', response.data.full_name);
+                localStorage.setItem('email', response.data.email);
+                self.props.history.push('/Profile');
+                // }
             })
             .catch(function(error) {
                 console.log(error);
