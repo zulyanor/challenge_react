@@ -6,38 +6,45 @@ import { Provider, connect } from 'unistore/react';
 import { actions } from '../components/Initial';
 
 class Signin extends React.Component {
-    state = { username: '', password: '' };
+    // state = { username: '', password: '' };
     changeInput = e => {
         this.setState({ [e.target.name]: e.target.value });
     };
-    postLogin = () => {
-        const { username, password } = this.state;
-        const data = {
-            username: username,
-            password: password
-        };
-        const self = this;
-        axios
-            .post('https://zulyano1.free.beeceptor.com/auth', data)
-            .then(function(response) {
-                console.log(response.data);
-                // if (response.data.hasOwnProperty('api_key')) {
-                // localStorage.setItem('api_key', response.data.api_key);
-                // localStorage.setItem('is_login', true);
-                // localStorage.setItem('full_name', response.data.full_name);
-                // localStorage.setItem('email', response.data.email);
-                self.props.changeUsername(response.data.username);
-                // self.props.changePassword(response.data.password);
-                self.props.changeEmail(response.data.email);
-                self.props.changeLogin();
-                console.log(self.props);
-                self.props.history.push('/Profile');
-                // }
-            })
-            .catch(function(error) {
-                console.log(error);
-            });
+    doLogin = () => {
+        this.props.postLogin().then(() => {
+            console.log('this', this);
+            this.props.history.replace('/Profile');
+            console.log('this props history, ', this.props.history);
+        });
     };
+    // postLogin = () => {
+    //     const { username, password } = this.state;
+    //     const data = {
+    //         username: username,
+    //         password: password
+    //     };
+    //     const self = this;
+    //     axios
+    //         .post('https://zulyano1.free.beeceptor.com/auth', data)
+    //         .then(function(response) {
+    //             console.log(response.data);
+    //             // if (response.data.hasOwnProperty('api_key')) {
+    //             // localStorage.setItem('api_key', response.data.api_key);
+    //             // localStorage.setItem('is_login', true);
+    //             // localStorage.setItem('full_name', response.data.full_name);
+    //             // localStorage.setItem('email', response.data.email);
+    //             self.props.changeUsername(response.data.username);
+    //             // self.props.changePassword(response.data.password);
+    //             self.props.changeEmail(response.data.email);
+    //             self.props.changeLogin();
+    //             console.log(self.props);
+    //             self.props.history.push('/Profile');
+    //             // }
+    //         })
+    //         .catch(function(error) {
+    //             console.log(error);
+    //         });
+    // };
 
     render() {
         console.log('state', this.state);
@@ -63,7 +70,7 @@ class Signin extends React.Component {
                                 onChange={e => this.changeInput(e)}
                             />
                         </div>
-                        <button onClick={() => this.postLogin()}>Sign In</button>
+                        <button onClick={() => this.doLogin()}>Sign In</button>
                         <button type="reset">Reset</button>
                     </form>
                 </section>
