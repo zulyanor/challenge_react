@@ -1,6 +1,8 @@
 import React from 'react';
 import logoAlta from '../assets/img/logo-ALTA@2x.png';
 import { Route, Link, BrowserRouter as Router } from 'react-router-dom';
+import { connect } from 'unistore/react';
+import { actions } from './Initial';
 
 function Header(props) {
     return (
@@ -33,7 +35,14 @@ function Header(props) {
                                     <Link to="/Signin">SIGN IN</Link>
                                 </li>
                                 <li id="contact">
-                                    <Link to="/Form">SIGN OUT</Link>
+                                    <Link
+                                        to="/Signin"
+                                        onClick={() => {
+                                            props.logOut();
+                                        }}
+                                    >
+                                        SIGN OUT
+                                    </Link>
                                 </li>
                                 <li id="article">
                                     <Link to="/Article">ARTICLE</Link>
@@ -47,4 +56,7 @@ function Header(props) {
     );
 }
 
-export default Header;
+export default connect(
+    'username, password, isLogin',
+    actions
+)(Header);

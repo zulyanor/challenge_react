@@ -5,7 +5,7 @@ import Article from '../pages/Article';
 function Categories({ match }) {
     return (
         <div className="categories-container">
-            <Article />
+            <Article value={match.params.category} />
         </div>
     );
 }

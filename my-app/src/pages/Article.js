@@ -39,7 +39,7 @@ class Article extends React.Component {
         });
     };
     // so the api will load before searching (default state)
-    componentWillMount() {
+    componentDidMount() {
         const self = this;
         axios
             .get('https://newsapi.org/v2/everything?' + 'q=animal&' + 'apiKey=9feafcae305b4d9ca1624bb8e3d2ecb6')
@@ -74,11 +74,11 @@ class Article extends React.Component {
         // const {
         //     match: { params }
         // } = this.props;
-        if (prevProps.match.category !== this.props.match.category) {
+        if (prevProps.value !== this.props.value) {
             axios
                 .get(
-                    `https://newsapi.org/v2/everything?q=${
-                        this.props.match.category
+                    `https://newsapi.org/v2/everything?category=${
+                        this.props.value
                     }&apiKey=9feafcae305b4d9ca1624bb8e3d2ecb6`
                 )
                 .then(function(response) {
@@ -100,22 +100,22 @@ class Article extends React.Component {
                 <Header handle={this.handleChange} />
                 <div className="row text-center categories">
                     <div className="col-md-3">
-                        <Link to="/Article/Sport">
+                        <Link to="/Article/sports">
                             <p>Sport</p>
                         </Link>
                     </div>
                     <div className="col-md-3">
-                        <Link to="/Article/Politic">
+                        <Link to="/Article/entertainment">
                             <p>Politic</p>
                         </Link>
                     </div>
                     <div className="col-md-3">
-                        <Link to="/Article/Tech">
+                        <Link to="/Article/technology">
                             <p>Tech</p>
                         </Link>
                     </div>
                     <div className="col-md-3">
-                        <Link to="/Article/Business">
+                        <Link to="/Article/usiness">
                             <p>Business</p>
                         </Link>
                     </div>

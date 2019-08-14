@@ -2,6 +2,8 @@ import React from 'react';
 import Header from '../components/Header';
 import axios from 'axios';
 import { withRouter } from 'react-router-dom';
+import { Provider, connect } from 'unistore/react';
+import { actions } from '../components/Initial';
 
 class Signin extends React.Component {
     state = { username: '', password: '' };
@@ -20,10 +22,15 @@ class Signin extends React.Component {
             .then(function(response) {
                 console.log(response.data);
                 // if (response.data.hasOwnProperty('api_key')) {
-                localStorage.setItem('api_key', response.data.api_key);
-                localStorage.setItem('is_login', true);
-                localStorage.setItem('full_name', response.data.full_name);
-                localStorage.setItem('email', response.data.email);
+                // localStorage.setItem('api_key', response.data.api_key);
+                // localStorage.setItem('is_login', true);
+                // localStorage.setItem('full_name', response.data.full_name);
+                // localStorage.setItem('email', response.data.email);
+                self.props.changeUsername(response.data.username);
+                // self.props.changePassword(response.data.password);
+                self.props.changeEmail(response.data.email);
+                self.props.changeLogin();
+                console.log(self.props);
                 self.props.history.push('/Profile');
                 // }
             })
@@ -65,4 +72,7 @@ class Signin extends React.Component {
     }
 }
 
-export default withRouter(Signin);
+export default connect(
+    'username, password, isLogin',
+    actions
+)(Signin);
