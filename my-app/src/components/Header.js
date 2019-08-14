@@ -30,7 +30,7 @@ function Header(props) {
                                     <Link to="/">PROFILE</Link>
                                 </li>
                                 <li id="about">
-                                    <Link to="/AboutMe">SIGN IN</Link>
+                                    <Link to="/Signin">SIGN IN</Link>
                                 </li>
                                 <li id="contact">
                                     <Link to="/Form">SIGN OUT</Link>

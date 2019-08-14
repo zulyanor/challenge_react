@@ -9,17 +9,24 @@ import Form from './pages/Form';
 import Article from './pages/Article';
 import Categories from './components/Categories';
 import * as serviceWorker from './serviceWorker';
+import Signin from './pages/Signin';
+import Profile from './pages/Profile';
+import Notfound from './pages/Notfound';
 
 // variable to state route between pages => link_to in {header component}
 const routing = (
     <Router>
         <div>
-            <Route exact path="/" component={Home} />
-            <Route path="/AboutMe" component={AboutMe} />
-            <Route path="/Form" component={Form} />
-            <Route exact path="/Article" component={Article} />
-            <Route path="/Article/:category" component={Article} />
-            <Route path="/Categories/:category" component={Categories} />
+            <Switch>
+                <Route exact path="/" component={Home} />
+                <Route path="/AboutMe" component={AboutMe} />
+                <Route path="/Form" component={Form} />
+                <Route exact path="/Article" component={Article} />
+                <Route path="/Article/:category" component={Article} />
+                <Route exact path="/Signin" component={Signin} />
+                <Route exact path="/Profile" component={Profile} />
+                <Route component={Notfound} />
+            </Switch>
         </div>
     </Router>
 );

@@ -25,7 +25,7 @@ class Article extends React.Component {
                 .get(
                     'https://newsapi.org/v2/everything?q=' +
                         self.state.keyword +
-                        '&apiKey=79eb08ce1ed043efb01f7889808dcfa6'
+                        '&apiKey=9feafcae305b4d9ca1624bb8e3d2ecb6'
                 )
                 // response.data.article is the object from the api
                 // response is from the argument
@@ -42,7 +42,7 @@ class Article extends React.Component {
     componentWillMount() {
         const self = this;
         axios
-            .get('https://newsapi.org/v2/everything?' + 'q=animal&' + 'apiKey=75014307be5d49a19d0e677cbd6ccc63')
+            .get('https://newsapi.org/v2/everything?' + 'q=animal&' + 'apiKey=9feafcae305b4d9ca1624bb8e3d2ecb6')
             .then(function(response) {
                 self.setState({ data: response.data.articles });
                 // handle success
@@ -54,7 +54,7 @@ class Article extends React.Component {
             });
     }
 
-    componentDidUpdate(prevProps) {
+    componentDidUpdate = prevProps => {
         // so the api will back to default state after deleting search
         // componentDidMount()
         // const self = this;
@@ -71,15 +71,18 @@ class Article extends React.Component {
         //         // handle error
         //         console.log(error);
         //     });
-        const {
-            match: { params }
-        } = this.props;
-        const self = this;
-        if (prevProps !== self.props.category) {
+        // const {
+        //     match: { params }
+        // } = this.props;
+        if (prevProps.match.category !== this.props.match.category) {
             axios
-                .get(`https://newsapi.org/v2/everything?q=${params.category}&apiKey=75014307be5d49a19d0e677cbd6ccc63`)
+                .get(
+                    `https://newsapi.org/v2/everything?q=${
+                        this.props.match.category
+                    }&apiKey=9feafcae305b4d9ca1624bb8e3d2ecb6`
+                )
                 .then(function(response) {
-                    self.setState({ data: response.data.articles });
+                    this.setState({ data: response.data.articles });
                     // handle success
                     console.log(response.data.articles);
                 })
@@ -88,7 +91,7 @@ class Article extends React.Component {
                     console.log(error);
                 });
         }
-    }
+    };
     render() {
         console.log(this.state.data);
         return (
