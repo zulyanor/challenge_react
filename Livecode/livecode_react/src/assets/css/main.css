@@ -1,0 +1,30 @@
+.list_movies {
+    margin-bottom: 20px;
+    border: solid black 2px;
+}
+
+.movie_desc {
+    padding: 20px;
+}
+
+header {
+    display: table;
+    margin-bottom: 20px;
+}
+
+header li {
+    display: table-cell;
+    padding-top: 10px;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+.profile_page {
+    border: solid black 2px;
+}
+
+.sign_in_content {
+    border: solid gray 1px;
+    border-radius: 10px;
+    padding: 10px;
+}
