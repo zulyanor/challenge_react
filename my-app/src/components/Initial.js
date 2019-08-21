@@ -2,7 +2,7 @@ import createStore from 'unistore';
 import { Provider, connect } from 'unistore/react';
 import axios from 'axios';
 
-export let store = createStore({ username: '', password: '', isLogin: false, email: '' });
+export let store = createStore({ username: '', password: '', isLogin: false, email: '', data: [] });
 
 export let actions = store => ({
     changeUsername(state, newUsername) {
@@ -15,6 +15,10 @@ export let actions = store => ({
 
     changeEmail(state, newEmail) {
         return { email: newEmail };
+    },
+
+    changeData(state, newData) {
+        return { data: newData };
     },
 
     logOut(state) {
@@ -39,3 +43,5 @@ export let actions = store => ({
             });
     }
 });
+
+// store.getState.namaState

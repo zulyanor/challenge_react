@@ -7,9 +7,9 @@ import { actions } from '../components/Initial';
 
 class Signin extends React.Component {
     // state = { username: '', password: '' };
-    changeInput = e => {
-        this.setState({ [e.target.name]: e.target.value });
-    };
+    // changeInput = e => {
+    //     this.setState({ [e.target.name]: e.target.value });
+    // };
     doLogin = () => {
         this.props.postLogin().then(() => {
             console.log('this', this);

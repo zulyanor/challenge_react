@@ -3,15 +3,17 @@ import Header from '../components/Header';
 import ArticleContent from '../components/ArticleContent';
 import ArticleContentTwo from '../components/ArticleContentTwo';
 import Footer from '../components/Footer';
-import { Route, Link, Switch, BrowserRouter as Router } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import axios from 'axios';
+import { connect } from 'unistore/react';
+import { actions } from '../components/Initial';
 
 class Article extends React.Component {
     constructor(props) {
         super(props);
         // state.keyword to keep track of value in search box
         // state.data to store search result
-        this.state = { keyword: '', data: [] };
+        this.state = { keyword: '' };
     }
 
     // method to handle onChange(onChange is a props of input tag in Header component) event (use arrow function so we dont need to bind 'this')
@@ -44,7 +46,7 @@ class Article extends React.Component {
         axios
             .get('https://newsapi.org/v2/everything?' + 'q=animal&' + 'apiKey=9feafcae305b4d9ca1624bb8e3d2ecb6')
             .then(function(response) {
-                self.setState({ data: response.data.articles });
+                this.props.changeData(response.data.articles);
                 // handle success
                 console.log(response.data.articles);
             })
@@ -83,7 +85,7 @@ class Article extends React.Component {
                     }&apiKey=9feafcae305b4d9ca1624bb8e3d2ecb6`
                 )
                 .then(function(response) {
-                    self.setState({ data: response.data.articles });
+                    this.props.changeData(response.data.articles);
                     // handle success
                     console.log(response.data.articles);
                 })
@@ -124,10 +126,10 @@ class Article extends React.Component {
                 <div className="row justify-content-center">
                     <div className="col-md-4">
                         {/* props data to be passed into ArticleContent component */}
-                        <ArticleContent data={this.state.data} />
+                        <ArticleContent data={this.props.data} />
                     </div>
                     <div className="col-md-8">
-                        <ArticleContentTwo data={this.state.data} />
+                        <ArticleContentTwo data={this.props.data} />
                     </div>
                 </div>
                 <Footer />
@@ -136,4 +138,7 @@ class Article extends React.Component {
     }
 }
 
-export default Article;
+export default connect(
+    'data',
+    actions
+)(Article);
